@@ -5,18 +5,18 @@ function comp(a1, a2) {
     else if (a1.length <= 0 || a2.length <= 0) return false;
 
     else {
-        var potegi = a1.map(el => Math.pow(el,2));
-        var wynik = potegi.filter((el) => !a2.includes(el) );
+        var potegi = a1.map(el => Math.pow(el, 2));
+        var niezgodne = potegi.filter((x) => !a2.includes(x));
 
-        if (wynik == null || wynik.length <= 0) { console.log("true"); }
+        if (niezgodne == null || niezgodne.length <= 0) { console.log("true"); }
         else { console.log("false"); }
 
         console.log(potegi);
-        console.log(wynik);
+        console.log(niezgodne);
     }
 }
 
 //Testing for 
-a1 = [7, 97, -5, 84, 69];
-a2 = [49, 9409, 25, 7056, 4761, 4761];
+a1 = [7, 97, -5, 84, 69, 51];
+a2 = [49, 9409, 25, 7056, 4761, 2601, 4761];
 comp(a1, a2); // Expected: true
