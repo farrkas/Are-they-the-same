@@ -2,16 +2,16 @@
 
 function comp(a1, a2) {
     if (a1 == null || a2 == null || a1 == undefined || a2 == undefined) return false;
-
     else if (a1.length <= 0 || a2.length <= 0) return false;
+
     else {
-        var pierwiastki = a2.map(el => Math.sqrt(el));
-        var wynik = pierwiastki.filter((el) => !a1.includes(el) );
+        var potegi = a1.map(el => Math.pow(el,2));
+        var wynik = potegi.filter((el) => !a2.includes(el) );
 
         if (wynik == null || wynik.length <= 0) { console.log("true"); }
         else { console.log("false"); }
 
-        console.log(a1);
+        console.log(potegi);
         console.log(wynik);
     }
 }
