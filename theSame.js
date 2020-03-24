@@ -5,7 +5,7 @@ function comp(a1, a2) {
     else if (a1.length <= 0 || a2.length <= 0) return false;
     else {
         var pierwiastki = a2.map(el => Math.sqrt(el));
-        var wynik = pierwiastki.filter((el) => { if (!a1.includes(el)) { return el; } });
+        var wynik = pierwiastki.filter((el) => !a1.includes(el) );
 
         if (wynik = null || wynik.length <= 0) { console.log("true"); }
         else { console.log("false"); }
@@ -15,31 +15,7 @@ function comp(a1, a2) {
     }
 }
 
-
-
-/*
-var a1 = [121, 144, 19, 161, 19, 144, 19, 11];
-var a2 = [11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19];
-comp(a1, a2);
-
-var a1 = [97, 40, 35, 41, 42, 36, 26, 15];
-var a2 = [9409, 1600, 1225, 1681, 1764, 1296, 676, 225];
-comp(a1, a2); //true
-*/
-
 //Testing for 
 a1 = [7, 97, 5, 84, 69];
 a2 = [49, 9409, 25, 7056, 4761, 4761];
 comp(a1, a2); // Expected: true
-/*
-//Testing for
-a1 = [59, 48, 68];
-a2 = [3481, 2304, 4624];
-comp(a1, a2);
-//It should work with random inputs too - Expected: true, instead got: false
-
-//Testing for
-a1 = [66, 58, 100, 88, 8, 76, 92, 1];
-a2 = [4356, 3364, 10000, 7744, 64, 5776, 8464, 1];
-comp(a1, a2);
-//It should work with random inputs too - Expected: true, instead got: false*/
