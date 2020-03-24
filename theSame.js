@@ -1,23 +1,18 @@
 // https://www.codewars.com/kata/550498447451fbbd7600041c/train/javascript
 
 function comp(a1, a2) {
-if (a1.length<=0 || a2.length<=0 || a1==null || a2==null) return false;
-else {
+    if (a1 == null || a2 == null) return false;
+    else if (a1.length <= 0 || a2.length <= 0) return false;
+    else {
+        var pierwiastki = a2.map(el => Math.sqrt(el));
+        var wynik = pierwiastki.filter((el) => { if (!a1.includes(el)) { return el; } });
 
-    var pierwiastki= a2.map(el=> Math.sqrt(el));
+        if (wynik = null || wynik.length <= 0) { console.log("true"); }
+        else { console.log("false"); }
 
-    var wynik = a1.map((el)=> {if (pierwiastki.includes(el)) {return el;}});
-    
-
-
-
-    /*if (a1 == null || a2 == null || a1.length <= 0 || a2.length <= 0) return false;
-    else if (a1.filter(x => x = a2.map(el => el % Math.sqrt(el)) == 0).length > 0) { console.log("true"); return true; }
-    else { console.log("false"); return false; }
-*/
-console.log(pierwiastki);
-console.log(wynik);
-}
+        console.log(a1);
+        console.log(wynik);
+    }
 }
 
 
@@ -34,16 +29,16 @@ comp(a1, a2); //true
 
 //Testing for 
 a1 = [7, 97, 5, 84, 69];
-a2 = [49, 9409, 25, 7056, 4761];
+a2 = [49, 9409, 25, 7056, 4761, 4761];
 comp(a1, a2); // Expected: true
 /*
-//Testing for 
+//Testing for
 a1 = [59, 48, 68];
 a2 = [3481, 2304, 4624];
 comp(a1, a2);
 //It should work with random inputs too - Expected: true, instead got: false
 
-//Testing for 
+//Testing for
 a1 = [66, 58, 100, 88, 8, 76, 92, 1];
 a2 = [4356, 3364, 10000, 7744, 64, 5776, 8464, 1];
 comp(a1, a2);
