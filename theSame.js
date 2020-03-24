@@ -1,11 +1,23 @@
 // https://www.codewars.com/kata/550498447451fbbd7600041c/train/javascript
 
 function comp(a1, a2) {
-    var wynik = a1.filter(x => x == a2.map(el => el % Math.sqrt(el)) == 0);
-    console.log(wynik);
-    if (a1 == null || a2 == null || a1.length <= 0 || a2.length <= 0) return false;
+if (a1.length<=0 || a2.length<=0 || a1==null || a2==null) return false;
+else {
+
+    var pierwiastki= a2.map(el=> Math.sqrt(el));
+
+    var wynik = a1.map((el)=> {if (pierwiastki.includes(el)) {return el;}});
+    
+
+
+
+    /*if (a1 == null || a2 == null || a1.length <= 0 || a2.length <= 0) return false;
     else if (a1.filter(x => x = a2.map(el => el % Math.sqrt(el)) == 0).length > 0) { console.log("true"); return true; }
     else { console.log("false"); return false; }
+*/
+console.log(pierwiastki);
+console.log(wynik);
+}
 }
 
 
@@ -24,7 +36,7 @@ comp(a1, a2); //true
 a1 = [7, 97, 5, 84, 69];
 a2 = [49, 9409, 25, 7056, 4761];
 comp(a1, a2); // Expected: true
-
+/*
 //Testing for 
 a1 = [59, 48, 68];
 a2 = [3481, 2304, 4624];
